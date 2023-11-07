@@ -1,11 +1,14 @@
-
-def tower_of_hanoi(disks, source, auxiliary, target):
-    if(disks == 1):
-        print("move disk 1 from {} to rod {}.".format(source, target))
+def TowerOfHanoi(n , source, destination, auxiliary):
+    if n==1:
+        print ("Move disk 1 from source",source,"to destination",destination)
         return
-    tower_of_hanoi(disks-1, source, target, auxiliary)
-    print('in 2nd move disk {} from rod {} to rod {}'.format(disks, source, target))
-    tower_of_hanoi(disks -  1, auxiliary, source, target)
 
-disks = int(input('Entter number of disks'))
-tower_of_hanoi(disks, 'A', 'B', 'C')
+    TowerOfHanoi(n-1, source, auxiliary, destination)
+
+    print ("Move disk",n,"from source",source,"to destination",destination)
+
+    TowerOfHanoi(n-1, auxiliary, destination, source)
+
+
+n = int(input('Enter the no of disks: '))
+TowerOfHanoi(n,'A','B','C')
