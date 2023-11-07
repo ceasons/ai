@@ -1,5 +1,4 @@
-Tower of Hanoi
-```py
+
 def tower_of_hanoi(disks, source, auxiliary, target):
     if(disks == 1):
         print("move disk 1 from {} to rod {}.".format(source, target))
@@ -10,4 +9,3 @@ def tower_of_hanoi(disks, source, auxiliary, target):
 
 disks = int(input('Entter number of disks'))
 tower_of_hanoi(disks, 'A', 'B', 'C')
-```
